@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "fastapi[standard]>=0.116.1",
     "graphviz>=0.21",
     "langgraph-checkpoint>=2.1.1",
     "langgraph[all]>=0.5.3",

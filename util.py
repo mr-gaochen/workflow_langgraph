@@ -2,7 +2,6 @@
 # util.py
 
 import sys
-import os
 
 def logger(*args, **kwargs):
     output = ""
