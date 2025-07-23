@@ -1,0 +1,92 @@
+[
+  {
+    "name": "root",
+    "nodes": [
+      {
+        "uniq_id": "start_1",
+        "name": "Start Node",
+        "type": "START",
+        "description": "This is the start of the workflow",
+        "nexts": ["step_1"],
+        "tool": null,
+        "true_next": null,
+        "false_next": null
+      },
+      {
+        "uniq_id": "step_1",
+        "name": "First Step",
+        "type": "STEP",
+        "description": "This is the first processing step",
+        "nexts": ["condition_1"],
+        "tool": "calculate_sum",
+        "true_next": null,
+        "false_next": null
+      },
+      {
+        "uniq_id": "condition_1",
+        "name": "Check Condition",
+        "type": "CONDITION",
+        "description": "Check if the sum is greater than 10",
+        "nexts": [],
+        "tool": null,
+        "true_next": "info_1",
+        "false_next": "step_2"
+      },
+      {
+        "uniq_id": "info_1",
+        "name": "Info Node",
+        "type": "INFO",
+        "description": "The sum was greater than 10",
+        "nexts": ["subgraph_1"],
+        "tool": null,
+        "true_next": null,
+        "false_next": null
+      },
+      {
+        "uniq_id": "step_2",
+        "name": "Alternative Step",
+        "type": "STEP",
+        "description": "The sum was not greater than 10",
+        "nexts": ["subgraph_1"],
+        "tool": null,
+        "true_next": null,
+        "false_next": null
+      },
+      {
+        "uniq_id": "subgraph_1",
+        "name": "Subprocess",
+        "type": "SUBGRAPH",
+        "description": "Call a subgraph",
+        "nexts": [],
+        "tool": null,
+        "true_next": null,
+        "false_next": null
+      }
+    ]
+  },
+  {
+    "name": "Subprocess",
+    "nodes": [
+      {
+        "uniq_id": "sub_start_1",
+        "name": "Sub Start",
+        "type": "START",
+        "description": "Start of subprocess",
+        "nexts": ["sub_step_1"],
+        "tool": null,
+        "true_next": null,
+        "false_next": null
+      },
+      {
+        "uniq_id": "sub_step_1",
+        "name": "Sub Step",
+        "type": "STEP",
+        "description": "Processing in subgraph",
+        "nexts": [],
+        "tool": "format_result",
+        "true_next": null,
+        "false_next": null
+      }
+    ]
+  }
+]
